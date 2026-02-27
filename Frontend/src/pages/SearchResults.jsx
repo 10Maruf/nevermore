@@ -56,7 +56,7 @@ export default function SearchResults({ navigate }) {
     async function fetchPopularProducts() {
       try {
         setPopularLoading(true)
-        const url = getApiUrl('/api/products/popular.php?limit=12&days=30')
+        const url = getApiUrl('/api/products/popular?limit=12&days=30')
         const response = await fetch(url, {
           cache: 'no-store',
           headers: {
@@ -71,7 +71,7 @@ export default function SearchResults({ navigate }) {
         }
 
         const data = JSON.parse(text)
-        if (data.status !== 'success' || !data.data || !Array.isArray(data.data.products)) {
+        if (data.success !== true || !data.data || !Array.isArray(data.data.products)) {
           return
         }
 
@@ -115,7 +115,7 @@ export default function SearchResults({ navigate }) {
   async function trackPopularProduct(product) {
     try {
       if (!product?.id) return
-      const url = getApiUrl('/api/products/track_click.php')
+      const url = getApiUrl(`/api/products/${product.id}/track-click`)
       await fetch(url, {
         method: 'POST',
         headers: {
@@ -143,7 +143,7 @@ export default function SearchResults({ navigate }) {
         setLoading(true)
         setError(null)
         
-        const url = getApiUrl(`/api/products/search.php?q=${encodeURIComponent(query)}`)
+        const url = getApiUrl(`/api/products/search?q=${encodeURIComponent(query)}`)
         console.log('Search API URL:', url)
         
         const response = await fetch(url, {
@@ -166,7 +166,7 @@ export default function SearchResults({ navigate }) {
         const data = JSON.parse(text)
         console.log('Search response:', data)
         
-        if (data.status === 'success' && data.data && data.data.products) {
+        if (data.success === true && data.data && data.data.products) {
           // Transform the data to match expected format
           const transformedProducts = data.data.products.map(product => {
             // Get first image from first variant's image field

@@ -24,7 +24,7 @@ export default function EditProfile({ navigate }){
         return
       }
       try {
-        const res = await fetch(getApiUrl('/api/user/profile.php'), {
+        const res = await fetch(getApiUrl('/api/user/profile'), {
           headers: { Accept: 'application/json', Authorization: `Bearer ${token}` },
           cache: 'no-store',
         })
@@ -73,8 +73,8 @@ export default function EditProfile({ navigate }){
 
     try {
       // 1) Update name immediately
-      const res1 = await fetch(getApiUrl('/api/user/update_profile.php'), {
-        method: 'POST',
+      const res1 = await fetch(getApiUrl('/api/user/profile'), {
+        method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',
@@ -91,7 +91,7 @@ export default function EditProfile({ navigate }){
 
       // 2) If email changed, request verification link
       if (trimmed.email && trimmed.email !== currentEmail) {
-        const res2 = await fetch(getApiUrl('/api/user/request_email_change.php'), {
+        const res2 = await fetch(getApiUrl('/api/user/request-email-change'), {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

@@ -89,7 +89,7 @@ export default function Payment({ navigate }) {
       if (!token) return
 
       try {
-        const res = await fetch(getApiUrl('/api/user/profile.php'), {
+        const res = await fetch(getApiUrl('/api/user/profile'), {
           headers: {
             Accept: 'application/json',
             Authorization: `Bearer ${token}`,
@@ -215,10 +215,10 @@ export default function Payment({ navigate }) {
     setDiscountLoading(true)
 
     try {
-      const response = await fetch(getApiUrl(`/api/discounts/discounts.php?code=${encodeURIComponent(discountCode.trim())}`))
+      const response = await fetch(getApiUrl(`/api/discounts?code=${encodeURIComponent(discountCode.trim())}`))      
       const data = await response.json()
 
-      if (data.status === 'success') {
+      if (data.success === true) {
         const discount = data.data
         
         // Check minimum purchase requirement
@@ -323,10 +323,11 @@ export default function Payment({ navigate }) {
       console.log('Order data being sent:', orderData)
 
       // Send order to backend
-      const response = await fetch(getApiUrl('/api/orders/orders.php'), {
+      const response = await fetch(getApiUrl('/api/orders/place'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          Authorization: `Bearer ${localStorage.getItem('authToken') || ''}`,
         },
         body: JSON.stringify(orderData)
       })
@@ -335,7 +336,7 @@ export default function Payment({ navigate }) {
       const result = await response.json()
       console.log('Response data:', result)
 
-      if (result.status === 'success') {
+      if (result.success === true) {
         // Store order data for success page
         const orderForDisplay = {
           order_id: result.data.order_id,
@@ -412,10 +413,11 @@ export default function Payment({ navigate }) {
       console.log('Order data being sent:', orderData)
 
       // Send order to backend
-      const response = await fetch(getApiUrl('/api/orders/orders.php'), {
+      const response = await fetch(getApiUrl('/api/orders/place'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          Authorization: `Bearer ${localStorage.getItem('authToken') || ''}`,
         },
         body: JSON.stringify(orderData)
       })
@@ -424,7 +426,7 @@ export default function Payment({ navigate }) {
       const result = await response.json()
       console.log('Response data:', result)
 
-      if (result.status === 'success') {
+      if (result.success === true) {
         // Store order data for success page
         const orderForDisplay = {
           order_id: result.data.order_id,

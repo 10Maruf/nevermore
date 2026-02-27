@@ -20,10 +20,10 @@ export default function ManagePricing() {
 
   const fetchCategories = async () => {
     try {
-      const response = await fetch(getApiUrl('/api/products/categories.php'))
+      const response = await fetch(getApiUrl('/api/products/categories'))
       const data = await response.json()
       
-      if (data.status === 'success') {
+      if (data.success === true) {
         // Handle both array and object responses
         const categoriesArray = Array.isArray(data.data) ? data.data : (data.data?.categories || [])
         setCategories(categoriesArray)
@@ -40,7 +40,7 @@ export default function ManagePricing() {
       const token = localStorage.getItem('adminAuthToken') || localStorage.getItem('authToken')
       console.log('Fetching products with token:', token ? 'exists' : 'missing')
       
-      const response = await fetch(getApiUrl('/api/products/manage.php'), {
+      const response = await fetch(getApiUrl('/api/admin/products'), {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -50,7 +50,7 @@ export default function ManagePricing() {
       const data = await response.json()
       console.log('Products data:', data)
       
-      if (data.status === 'success') {
+      if (data.success === true) {
         // Handle both array and object responses
         const productsArray = Array.isArray(data.data) ? data.data : (data.data?.products || [])
         setProducts(productsArray)
@@ -85,7 +85,7 @@ export default function ManagePricing() {
 
     try {
       const token = localStorage.getItem('adminAuthToken') || localStorage.getItem('authToken')
-      const response = await fetch(getApiUrl('/api/products/manage.php'), {
+      const response = await fetch(getApiUrl(`/api/admin/products/${parseInt(selectedProduct)}`), {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -99,7 +99,7 @@ export default function ManagePricing() {
 
       const data = await response.json()
 
-      if (data.status === 'success') {
+      if (data.success === true) {
         setSuccess('Price updated successfully!')
         setNewPrice('')
         setSelectedProduct('')

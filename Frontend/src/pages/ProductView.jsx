@@ -31,12 +31,12 @@ export default function ProductView({ navigate, productId }) {
         setError(null)
         
         // Try to fetch from backend API first
-        const response = await fetch(getApiUrl(`/api/products/products.php?id=${productId}`))
+        const response = await fetch(getApiUrl(`/api/products/${productId}`))
         const data = await response.json()
         
         console.log('ProductView API Response:', data)
         
-        if (data.status === 'success' && data.data && data.data.product) {
+        if (data.success === true && data.data && data.data.product) {
           const apiProduct = data.data.product
           
           console.log('API Product:', apiProduct)

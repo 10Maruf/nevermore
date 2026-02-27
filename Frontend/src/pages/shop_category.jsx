@@ -14,7 +14,7 @@ export default function ShopCategory({ navigate }) {
   useEffect(() => {
     const fetchCategoryImages = async () => {
       try {
-        const response = await fetch(getApiUrl('/api/categories/category_images.php'))
+        const response = await fetch(getApiUrl('/api/products/categories/images'))
         if (!response.ok) {
           throw new Error(`Failed to fetch category images (HTTP ${response.status})`)
         }
@@ -22,7 +22,7 @@ export default function ShopCategory({ navigate }) {
         const data = await response.json()
         console.log('Shop category - fetched images:', data)
         
-        if (data.status === 'success' && Array.isArray(data.data)) {
+        if (data.success === true && Array.isArray(data.data)) {
           const imagesMap = {}
           data.data.forEach(cat => {
             const slug = cat?.category_slug

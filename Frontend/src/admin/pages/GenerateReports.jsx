@@ -28,7 +28,7 @@ export default function GenerateReports() {
     try {
       const token = localStorage.getItem('adminAuthToken') || localStorage.getItem('authToken')
       const response = await fetch(
-        getApiUrl(`/api/orders/orders.php?start_date=${startDate}&end_date=${endDate}`),
+        getApiUrl(`/api/admin/orders?start_date=${startDate}&end_date=${endDate}`),
         {
           headers: {
             'Authorization': `Bearer ${token}`
@@ -38,8 +38,8 @@ export default function GenerateReports() {
 
       const data = await response.json()
 
-      if (data.status === 'success') {
-        const orders = data.data || []
+      if (data.success === true) {
+        const orders = data.data?.orders || data.data || []
         
         // Calculate report statistics
         const totalOrders = orders.length

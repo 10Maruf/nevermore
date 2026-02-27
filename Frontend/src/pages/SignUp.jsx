@@ -44,7 +44,7 @@ export default function SignUp({ navigate }) {
     }
 
     try {
-      const response = await fetch(getApiUrl('/api/auth/register.php'), {
+      const response = await fetch(getApiUrl('/api/auth/register'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -58,7 +58,7 @@ export default function SignUp({ navigate }) {
 
       const data = await response.json()
 
-      if (data.status === 'success') {
+      if (data.success === true) {
         setSuccess(data.message || 'Registration successful. Please verify your email.')
 
         // Prefill resend email with the submitted email
@@ -96,7 +96,7 @@ export default function SignUp({ navigate }) {
 
     setResendLoading(true)
     try {
-      const response = await fetch(getApiUrl('/api/auth/resend_verification.php'), {
+      const response = await fetch(getApiUrl('/api/auth/resend-verification'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -105,7 +105,7 @@ export default function SignUp({ navigate }) {
       })
 
       const data = await response.json().catch(() => null)
-      if (response.ok && data?.status === 'success') {
+      if (response.ok && data?.success === true) {
         setResendMessage(data.message || 'Verification email resent. Please check your inbox.')
         setResendVerifyLink(data?.data?.verify_link || '')
       } else {

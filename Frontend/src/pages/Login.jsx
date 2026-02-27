@@ -21,7 +21,7 @@ export default function Login({ navigate }) {
     try {
       console.log('Attempting login with:', email)
       
-      const response = await fetch(getApiUrl('/api/auth/login.php'), {
+      const response = await fetch(getApiUrl('/api/auth/login'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -44,7 +44,7 @@ export default function Login({ navigate }) {
       const data = await response.json()
       console.log('Login response:', data)
 
-      if (data.status === 'success') {
+      if (data.success === true) {
         // IMPORTANT:
         // - Admin session must NOT become a customer session.
         // - Store admin auth separately so the main website doesn't treat admin as a logged-in customer.

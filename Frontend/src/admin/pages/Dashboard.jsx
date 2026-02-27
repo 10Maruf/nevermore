@@ -52,11 +52,15 @@ export default function Dashboard() {
   const fetchDashboardData = async () => {
     try {
       // Fetch all orders to calculate statistics
-      const ordersResponse = await fetch(getApiUrl('/api/orders/orders.php?status=all'))
+      const ordersResponse = await fetch(getApiUrl('/api/admin/orders?status=all'), {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('adminAuthToken') || localStorage.getItem('authToken') || ''}`,
+        },
+      })
       const ordersData = await ordersResponse.json()
       
-      if (ordersData.status === 'success') {
-        const orders = ordersData.data
+      if (ordersData.success === true) {
+        const orders = ordersData.data.orders
 
         // Preload currencies for the set of countries present
         try {

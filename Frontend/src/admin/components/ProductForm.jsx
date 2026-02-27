@@ -149,14 +149,14 @@ export default function ProductForm({ mode = 'add', productId = null, onSuccess,
     try {
       setLoading(true)
       const token = localStorage.getItem('adminAuthToken') || localStorage.getItem('authToken')
-      const response = await fetch(getApiUrl(`/api/products/products.php?id=${productId}`), {
+      const response = await fetch(getApiUrl(`/api/products/${productId}`), {
         headers: {
           'Authorization': `Bearer ${token}`
         }
       })
       const data = await response.json()
       
-      if (data.status === 'success' && data.data?.product) {
+      if (data.success === true && data.data?.product) {
         const product = data.data.product
         
         // Store all variants for color switching
@@ -336,7 +336,7 @@ export default function ProductForm({ mode = 'add', productId = null, onSuccess,
         formData.append('image', file)
         
         // Upload image
-        const response = await fetch(getApiUrl('/api/admin/upload_image.php'), {
+        const response = await fetch(getApiUrl('/api/admin/products/upload-image'), {
           method: 'POST',
           headers: {
             'Authorization': `Bearer ${token}`
@@ -346,12 +346,12 @@ export default function ProductForm({ mode = 'add', productId = null, onSuccess,
         
         const data = await response.json()
         
-        if (data.status === 'success') {
+        if (data.success === true) {
           uploadedImages.push({
             id: Date.now() + Math.random(),
-            name: data.data.filename,
-            url: resolveBackendUrl(data.data.image_url),
-            serverUrl: data.data.image_url
+            name: data.data.filename || 'image',
+            url: data.data.url || resolveBackendUrl(data.data.image_url),
+            serverUrl: data.data.image_url || data.data.url
           })
         } else {
           setError(data.message || `Failed to upload ${file.name}`)
@@ -444,7 +444,7 @@ export default function ProductForm({ mode = 'add', productId = null, onSuccess,
         }
       }
 
-      const url = getApiUrl('/api/products/manage.php')
+      const url = getApiUrl(mode === 'edit' ? `/api/admin/products/${productId}` : '/api/admin/products')
       const method = mode === 'edit' ? 'PUT' : 'POST'
 
       const response = await fetch(url, {
@@ -458,7 +458,7 @@ export default function ProductForm({ mode = 'add', productId = null, onSuccess,
 
       const data = await response.json()
 
-      if (data.status === 'success') {
+      if (data.success === true) {
         setSuccess(mode === 'edit' ? 'Product updated successfully!' : 'Product added successfully!')
         setTimeout(() => {
           if (onSuccess) onSuccess()

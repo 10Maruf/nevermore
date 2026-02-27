@@ -23,8 +23,12 @@ export default function ResetPassword({ navigate }) {
         return
       }
       try {
-        const url = getApiUrl(`/api/auth/verify_password_reset.php?token=${encodeURIComponent(token)}`)
-        const res = await fetch(url, { cache: 'no-store', headers: { Accept: 'application/json' } })
+        const res = await fetch(getApiUrl('/api/auth/verify-reset-token'), {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          cache: 'no-store',
+          body: JSON.stringify({ token }),
+        })
         if (!cancelled) setTokenValid(res.ok)
       } catch (e) {
         if (!cancelled) setTokenValid(false)
@@ -56,7 +60,7 @@ export default function ResetPassword({ navigate }) {
 
     setLoading(true)
     try {
-      const res = await fetch(getApiUrl('/api/auth/reset_password.php'), {
+      const res = await fetch(getApiUrl('/api/auth/reset-password'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -46,19 +46,19 @@ export default function CategoryProducts({ navigate, categorySlug, pageTitle }) 
     async function fetchProducts() {
       try {
         setLoading(true)
-        const response = await fetch(getApiUrl(`/api/products/products.php?category=${categorySlug}`))
+        const response = await fetch(getApiUrl(`/api/products?category=${categorySlug}`))
         const data = await response.json()
         
         console.log('API Response:', data) // Debug log
         
         // Backend returns: { status: 'success', message: '...', data: { products: [...] } }
-        if (data.status === 'success' && data.data && data.data.products) {
+        if (data.success === true && data.data && data.data.products) {
           // Transform the data to match expected format
           const transformedProducts = data.data.products.map(product => {
             // Get first image from first variant's image field
             let primaryImage = null
-            if (product.variants && product.variants.length > 0) {
-              for (const variant of product.variants) {
+            if (product.variants_summary && product.variants_summary.length > 0) {
+              for (const variant of product.variants_summary) {
                 if (variant.image) {
                   primaryImage = variant.image
                   break
@@ -75,8 +75,8 @@ export default function CategoryProducts({ navigate, categorySlug, pageTitle }) 
               // Get primary image from first variant with image
               primary_image: primaryImage,
               // Get all unique colors from variants
-              colors: product.variants 
-                ? product.variants.map(v => v.color_code).filter(Boolean)
+              colors: product.variants_summary 
+                ? product.variants_summary.map(v => v.color_code).filter(Boolean)
                 : []
             }
           })

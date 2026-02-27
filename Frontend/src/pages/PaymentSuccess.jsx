@@ -68,7 +68,7 @@ export default function PaymentSuccess({ navigate }){
 
       // If logged in, show full order history.
       if (token) {
-        const response = await fetch(getApiUrl('/api/orders/my_orders.php?status=all'), {
+        const response = await fetch(getApiUrl('/api/orders?status=all'), {
           headers: {
             Accept: 'application/json',
             Authorization: `Bearer ${token}`,
@@ -77,8 +77,13 @@ export default function PaymentSuccess({ navigate }){
         })
         const result = await response.json().catch(() => null)
 
-        if (response.ok && result?.status === 'success' && Array.isArray(result.data)) {
-          const list = result.data
+        const ordersArray = Array.isArray(result?.data?.orders)
+          ? result.data.orders
+          : Array.isArray(result?.data)
+          ? result.data
+          : null
+        if (response.ok && result?.success === true && ordersArray) {
+          const list = ordersArray
           setOrders(list)
 
           // Preload currencies for countries in the list

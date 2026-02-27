@@ -120,7 +120,16 @@ Route::middleware('auth:sanctum')->group(function () {
             Route::put('/{id}', [AdminProductController::class, 'update']);
             Route::delete('/{id}', [AdminProductController::class, 'destroy']);
             Route::post('/upload-image', [AdminProductController::class, 'uploadImage']);
+            Route::delete('/variants/{id}', [AdminProductController::class, 'destroyVariant']);
         });
+
+        // Category images
+        Route::post('/categories/images', [CategoryController::class, 'storeImage']);
+        Route::delete('/categories/images/{slug}', [CategoryController::class, 'deleteImage']);
+
+        // Discounts
+        Route::post('/discounts', [DiscountController::class, 'store']);
+        Route::delete('/discounts/{id}', [DiscountController::class, 'destroy']);
 
         // Orders
         Route::prefix('orders')->group(function () {

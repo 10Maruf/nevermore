@@ -35,16 +35,16 @@ export default function MenNewArrival({ navigate }){
 
   const fetchProducts = async () => {
     try {
-      const response = await fetch(getApiUrl('/api/products/products.php?category=men-new-collection'))
+      const response = await fetch(getApiUrl('/api/products?category=men-new-collection'))
       const data = await response.json()
       
-      if (data.status === 'success' && data.data.products) {
+      if (data.success === true && data.data.products) {
         // Transform products to match the expected format
         const transformedProducts = data.data.products.map(product => {
           // Get first variant's image if available
           let imageUrl = '/assets/placeholders/product.png'
-          if (product.variants && product.variants.length > 0 && product.variants[0].image) {
-            imageUrl = resolveBackendUrl(product.variants[0].image)
+          if (product.variants_summary && product.variants_summary.length > 0 && product.variants_summary[0].image) {
+            imageUrl = resolveBackendUrl(product.variants_summary[0].image)
           }
           
           return {

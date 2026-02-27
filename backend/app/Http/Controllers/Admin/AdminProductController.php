@@ -105,6 +105,7 @@ class AdminProductController extends Controller
             return response()->json(['success' => false, 'message' => 'Product not found.'], 404);
         }
 
+        // Update basic product fields
         $fillable = $request->only(['name', 'description', 'base_price', 'size_fit', 'care_maintenance']);
 
         if ($request->filled('category_slug')) {
@@ -117,7 +118,66 @@ class AdminProductController extends Controller
 
         $product->fill($fillable)->save();
 
-        return response()->json(['success' => true, 'message' => 'Product updated.', 'data' => ['product' => $product]]);
+        // Full variant update if variant_id or color/sizes/images provided
+        $variantId = $request->input('variant_id');
+        if ($variantId || $request->has('color') || $request->has('sizes') || $request->has('images')) {
+
+            if ($variantId) {
+                $variant = DB::table('product_variants')->where('id', $variantId)->where('product_id', $id)->first();
+                if ($variant) {
+                    DB::table('product_variants')->where('id', $variantId)->update([
+                        'color'      => $request->input('color', $variant->color),
+                        'color_code' => $request->input('color_code', $variant->color_code ?? ''),
+                    ]);
+                }
+            } else {
+                // Get or create the first variant
+                $variantId = DB::table('product_variants')->where('product_id', $id)->value('id');
+                if (!$variantId) {
+                    $color = $request->input('color', '');
+                    $variantId = DB::table('product_variants')->insertGetId([
+                        'product_id' => $id,
+                        'color'      => $color,
+                        'color_code' => $request->input('color_code', ''),
+                        'sku'        => strtoupper(Str::substr($product->name, 0, 3)) . '-' . strtoupper(Str::substr($color ?: 'DEF', 0, 3)) . '-' . time(),
+                    ]);
+                } else {
+                    if ($request->has('color')) {
+                        DB::table('product_variants')->where('id', $variantId)->update([
+                            'color'      => $request->input('color'),
+                            'color_code' => $request->input('color_code', ''),
+                        ]);
+                    }
+                }
+            }
+
+            // Replace inventory if sizes provided
+            if ($request->has('sizes')) {
+                DB::table('product_inventory')->where('variant_id', $variantId)->delete();
+                foreach ((array)$request->input('sizes', []) as $s) {
+                    DB::table('product_inventory')->insert([
+                        'variant_id' => $variantId,
+                        'size'       => $s['size'],
+                        'quantity'   => (int)($s['quantity'] ?? 0),
+                    ]);
+                }
+            }
+
+            // Replace images if provided
+            if ($request->has('images')) {
+                DB::table('product_images')->where('variant_id', $variantId)->delete();
+                foreach ((array)$request->input('images', []) as $idx => $img) {
+                    DB::table('product_images')->insert([
+                        'variant_id'    => $variantId,
+                        'image_url'     => $img['url'],
+                        'display_order' => $img['order'] ?? $img['display_order'] ?? $idx,
+                        'is_primary'    => $idx === 0 ? 1 : 0,
+                    ]);
+                }
+            }
+        }
+
+        return response()->json(['success' => true, 'message' => 'Product updated.', 'data' => ['product' => $product->fresh()]]);
     }
 
     /** DELETE /api/admin/products/{id} */
@@ -147,9 +207,30 @@ class AdminProductController extends Controller
         $filename = time() . '_' . Str::random(8) . '.' . $file->getClientOriginalExtension();
         $file->move($dir, $filename);
 
+        $relativePath = '/uploads/products/' . $filename;
+
         return response()->json([
             'success' => true,
-            'data'    => ['url' => url('uploads/products/' . $filename)],
+            'data'    => [
+                'url'        => url('uploads/products/' . $filename),
+                'image_url'  => $relativePath,
+                'filename'   => $filename,
+            ],
         ]);
+    }
+
+    /** DELETE /api/admin/products/variants/{id} — delete a single variant */
+    public function destroyVariant(int $id)
+    {
+        $variant = DB::table('product_variants')->where('id', $id)->first();
+        if (!$variant) {
+            return response()->json(['success' => false, 'message' => 'Variant not found.'], 404);
+        }
+
+        DB::table('product_images')->where('variant_id', $id)->delete();
+        DB::table('product_inventory')->where('variant_id', $id)->delete();
+        DB::table('product_variants')->where('id', $id)->delete();
+
+        return response()->json(['success' => true, 'message' => 'Variant deleted.']);
     }
 }

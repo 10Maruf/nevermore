@@ -89,4 +89,51 @@ class DiscountController extends Controller
             ],
         ]);
     }
+
+    /** POST /api/admin/discounts — Create a discount code (admin) */
+    public function store(Request $request)
+    {
+        $request->validate([
+            'code'         => 'required|string|max:50',
+            'type'         => 'required|in:percentage,fixed',
+            'value'        => 'required|numeric|min:0',
+            'min_purchase' => 'sometimes|numeric|min:0',
+            'expiry_date'  => 'nullable|date',
+            'max_uses'     => 'nullable|integer|min:1',
+        ]);
+
+        $exists = DB::table('discount_codes')->where('code', strtoupper(trim($request->code)))->exists();
+        if ($exists) {
+            return response()->json(['success' => false, 'message' => 'Discount code already exists.'], 409);
+        }
+
+        $id = DB::table('discount_codes')->insertGetId([
+            'code'         => strtoupper(trim($request->code)),
+            'type'         => $request->type,
+            'value'        => $request->value,
+            'min_purchase' => $request->input('min_purchase', 0),
+            'expiry_date'  => $request->input('expiry_date'),
+            'max_uses'     => $request->input('max_uses'),
+            'current_uses' => 0,
+            'status'       => 'active',
+            'created_at'   => now(),
+            'updated_at'   => now(),
+        ]);
+
+        $discount = DB::table('discount_codes')->find($id);
+
+        return response()->json(['success' => true, 'message' => 'Discount code created.', 'data' => $discount], 201);
+    }
+
+    /** DELETE /api/admin/discounts/{id} — Delete a discount code (admin) */
+    public function destroy(int $id)
+    {
+        $deleted = DB::table('discount_codes')->where('id', $id)->delete();
+
+        if (!$deleted) {
+            return response()->json(['success' => false, 'message' => 'Discount code not found.'], 404);
+        }
+
+        return response()->json(['success' => true, 'message' => 'Discount code deleted.']);
+    }
 }

@@ -24,7 +24,7 @@ export default function ManageDiscount() {
   const fetchDiscounts = async () => {
     try {
       const token = localStorage.getItem('adminAuthToken') || localStorage.getItem('authToken')
-      const response = await fetch(getApiUrl('/api/discounts/discounts.php'), {
+      const response = await fetch(getApiUrl('/api/discounts'), {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -32,8 +32,8 @@ export default function ManageDiscount() {
       
       const data = await response.json()
       
-      if (data.status === 'success') {
-        setDiscounts(data.data || [])
+      if (data.success === true) {
+        setDiscounts(data.data?.discounts || data.data || [])
       }
     } catch (err) {
       console.error('Error fetching discounts:', err)
@@ -58,8 +58,7 @@ export default function ManageDiscount() {
 
     try {
       const token = localStorage.getItem('adminAuthToken') || localStorage.getItem('authToken')
-      const response = await fetch(getApiUrl('/api/discounts/discounts.php'), {
-        method: 'POST',
+      const response = await fetch(getApiUrl('/api/admin/discounts'), {
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`
@@ -76,7 +75,7 @@ export default function ManageDiscount() {
 
       const data = await response.json()
 
-      if (data.status === 'success') {
+      if (data.success === true) {
         setSuccess('Discount created successfully!')
         setFormData({ code: "", type: "percentage", value: "", minPurchase: "", expiryDate: "", maxUses: "" })
         fetchDiscounts()
@@ -99,7 +98,7 @@ export default function ManageDiscount() {
 
     try {
       const token = localStorage.getItem('adminAuthToken') || localStorage.getItem('authToken')
-      const response = await fetch(getApiUrl(`/api/discounts/discounts.php?id=${id}`), {
+      const response = await fetch(getApiUrl(`/api/admin/discounts/${id}`), {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`
@@ -108,7 +107,7 @@ export default function ManageDiscount() {
 
       const data = await response.json()
 
-      if (data.status === 'success') {
+      if (data.success === true) {
         setSuccess('Discount deleted successfully!')
         fetchDiscounts()
         setTimeout(() => setSuccess(''), 3000)

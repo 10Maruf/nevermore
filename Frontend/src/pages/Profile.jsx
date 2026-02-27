@@ -23,7 +23,7 @@ export default function Profile({ navigate }) {
       }
 
       try {
-        const res = await fetch(getApiUrl('/api/user/profile.php'), {
+        const res = await fetch(getApiUrl('/api/user/profile'), {
           headers: {
             Accept: 'application/json',
             Authorization: `Bearer ${token}`,

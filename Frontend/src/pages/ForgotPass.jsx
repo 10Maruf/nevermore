@@ -18,7 +18,7 @@ export default function ForgotPass({ navigate }){
     setLoading(true)
 
     try {
-      const response = await fetch(getApiUrl('/api/auth/request_password_reset.php'), {
+      const response = await fetch(getApiUrl('/api/auth/forgot-password'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -42,7 +42,7 @@ export default function ManageCategoryImages() {
   const fetchCategoryImages = async () => {
     try {
       const token = localStorage.getItem('adminAuthToken') || localStorage.getItem('authToken')
-      const response = await fetch(getApiUrl('/api/categories/category_images.php'), {
+      const response = await fetch(getApiUrl('/api/products/categories/images'), {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -51,7 +51,7 @@ export default function ManageCategoryImages() {
       const data = await response.json()
       console.log('Fetched category images:', data)
       
-      if (data.status === 'success') {
+      if (data.success === true) {
         setCategoryImages(data.data || [])
       }
     } catch (err) {
@@ -72,7 +72,7 @@ export default function ManageCategoryImages() {
       formData.append('image', file)
 
       const token = localStorage.getItem('adminAuthToken') || localStorage.getItem('authToken')
-      const uploadResponse = await fetch(getApiUrl('/api/admin/upload_image.php'), {
+      const uploadResponse = await fetch(getApiUrl('/api/admin/products/upload-image'), {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`
@@ -83,9 +83,9 @@ export default function ManageCategoryImages() {
       const uploadData = await uploadResponse.json()
       console.log('Upload image response:', uploadData)
 
-      if (uploadData.status === 'success') {
+      if (uploadData.success === true) {
         setSelectedImage(uploadData.data.image_url)
-        setImagePreview(resolveBackendUrl(uploadData.data.image_url))
+        setImagePreview(resolveBackendUrl(uploadData.data.url || uploadData.data.image_url))
       } else {
         setError(uploadData.message || 'Failed to upload image')
       }
@@ -115,7 +115,7 @@ export default function ManageCategoryImages() {
 
     try {
       const token = localStorage.getItem('adminAuthToken') || localStorage.getItem('authToken')
-      const response = await fetch(getApiUrl('/api/categories/category_images.php'), {
+      const response = await fetch(getApiUrl('/api/admin/categories/images'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -130,7 +130,7 @@ export default function ManageCategoryImages() {
       const data = await response.json()
       console.log('Save category image response:', data)
 
-      if (data.status === 'success') {
+      if (data.success === true) {
         setSuccess('Category image saved successfully!')
         setSelectedCategory("")
         setSelectedImage(null)
@@ -155,7 +155,7 @@ export default function ManageCategoryImages() {
 
     try {
       const token = localStorage.getItem('adminAuthToken') || localStorage.getItem('authToken')
-      const response = await fetch(getApiUrl(`/api/categories/category_images.php?category=${categorySlug}`), {
+      const response = await fetch(getApiUrl(`/api/admin/categories/images/${categorySlug}`), {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`
@@ -164,7 +164,7 @@ export default function ManageCategoryImages() {
 
       const data = await response.json()
 
-      if (data.status === 'success') {
+      if (data.success === true) {
         setSuccess('Category image deleted successfully!')
         fetchCategoryImages()
         setTimeout(() => setSuccess(''), 3000)

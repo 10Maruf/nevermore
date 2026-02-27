@@ -18,11 +18,15 @@ export default function ViewOrders() {
   const fetchOrders = async () => {
     setLoading(true);
     try {
-      const response = await fetch(getApiUrl(`/api/orders/orders.php?status=${filter}`));
+      const response = await fetch(getApiUrl(`/api/admin/orders?status=${filter}`), {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('adminAuthToken') || localStorage.getItem('authToken') || ''}`,
+        },
+      });
       const data = await response.json();
       
-      if (data.status === 'success') {
-        setOrders(data.data);
+      if (data.success === true) {
+        setOrders(data.data.orders);
       } else {
         console.error('Failed to fetch orders:', data.message);
       }
@@ -35,10 +39,11 @@ export default function ViewOrders() {
 
   const updateOrderStatus = async (orderId, newStatus) => {
     try {
-      const response = await fetch(getApiUrl('/api/orders/orders.php'), {
+      const response = await fetch(getApiUrl(`/api/admin/orders/${orderId}/status`), {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
+          Authorization: `Bearer ${localStorage.getItem('adminAuthToken') || localStorage.getItem('authToken') || ''}`,
         },
         body: JSON.stringify({
           order_id: orderId,
@@ -48,7 +53,7 @@ export default function ViewOrders() {
 
       const data = await response.json();
       
-      if (data.status === 'success') {
+      if (data.success === true) {
         // Close modal
         setSelectedOrder(null);
         // Refresh orders list

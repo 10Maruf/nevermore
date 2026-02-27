@@ -29,7 +29,7 @@ export default function Accessories({ navigate }) {
         const allProducts = []
         
         for (const category of categories) {
-          const response = await fetch(getApiUrl(`/api/products/products.php?category=${category}`))
+          const response = await fetch(getApiUrl(`/api/products?category=${category}`))
           const data = await response.json()
           if (data.success && data.data && data.data.products) {
             // Transform products
@@ -39,8 +39,8 @@ export default function Accessories({ navigate }) {
               price: product.base_price,
               category_slug: product.category_slug,
               category_name: getCategoryName(product.category_slug),
-              primary_image: product.variants?.[0]?.image || null,
-              colors: product.variants?.map(v => v.color_code).filter(Boolean) || []
+              primary_image: product.variants_summary?.[0]?.image || null,
+              colors: product.variants_summary?.map(v => v.color_code).filter(Boolean) || []
             }))
             allProducts.push(...transformed)
           }

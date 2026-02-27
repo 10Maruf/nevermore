@@ -43,14 +43,14 @@ export default function ManageProducts() {
   const fetchProducts = async () => {
     try {
       const token = localStorage.getItem('adminAuthToken') || localStorage.getItem('authToken')
-      const response = await fetch(getApiUrl('/api/products/manage.php'), {
+      const response = await fetch(getApiUrl('/api/admin/products'), {
         headers: {
           'Authorization': `Bearer ${token}`
         }
       })
       const data = await response.json()
-      if (data.status === 'success') {
-        setProducts(data.data.products)
+      if (data.success === true) {
+        setProducts(data.data.products || [])
       }
     } catch (err) {
       console.error('Failed to fetch products:', err)
@@ -95,7 +95,7 @@ export default function ManageProducts() {
     try {
       const token = localStorage.getItem('adminAuthToken') || localStorage.getItem('authToken')
       const response = await fetch(
-        getApiUrl(`/api/products/manage.php?product_id=${productId}`),
+        getApiUrl(`/api/admin/products/${productId}`),
         {
           method: 'DELETE',
           headers: {
@@ -106,7 +106,7 @@ export default function ManageProducts() {
 
       const data = await response.json()
 
-      if (data.status === 'success') {
+      if (data.success === true) {
         alert('Product deleted successfully!')
         fetchProducts()
       } else {
@@ -124,7 +124,7 @@ export default function ManageProducts() {
     try {
       const token = localStorage.getItem('adminAuthToken') || localStorage.getItem('authToken')
       const response = await fetch(
-        getApiUrl(`/api/products/products.php?id=${product.id}`),
+        getApiUrl(`/api/products/${product.id}`),
         {
           headers: {
             'Authorization': `Bearer ${token}`
@@ -134,7 +134,7 @@ export default function ManageProducts() {
       
       const data = await response.json()
       
-      if (data.status === 'success' && data.data.product) {
+      if (data.success === true && data.data.product) {
         // Group inventory by color
         const inventoryByColor = {}
         
@@ -178,7 +178,7 @@ export default function ManageProducts() {
     try {
       const token = localStorage.getItem('adminAuthToken') || localStorage.getItem('authToken')
       const response = await fetch(
-        getApiUrl(`/api/products/manage.php?variant_id=${variantId}`),
+        getApiUrl(`/api/admin/products/variants/${variantId}`),
         {
           method: 'DELETE',
           headers: {
@@ -189,7 +189,7 @@ export default function ManageProducts() {
 
       const data = await response.json()
 
-      if (data.status === 'success') {
+      if (data.success === true) {
         alert(`${color} variant deleted successfully!`)
         // Refresh inventory view
         handleViewInventory(selectedProduct)

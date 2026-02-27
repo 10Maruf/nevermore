@@ -24,7 +24,7 @@ export default function ProfileChangePass({ navigate }) {
         return
       }
       try {
-        const res = await fetch(getApiUrl('/api/user/profile.php'), {
+        const res = await fetch(getApiUrl('/api/user/profile'), {
           headers: { Accept: 'application/json', Authorization: `Bearer ${token}` },
           cache: 'no-store',
         })
@@ -65,7 +65,7 @@ export default function ProfileChangePass({ navigate }) {
 
     setLoading(true)
     try {
-      const res = await fetch(getApiUrl('/api/user/change_password.php'), {
+      const res = await fetch(getApiUrl('/api/user/change-password'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
