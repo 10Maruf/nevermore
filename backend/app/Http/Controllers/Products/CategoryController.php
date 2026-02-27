@@ -3,47 +3,38 @@
 namespace App\Http\Controllers\Products;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Models\Category;
+use App\Models\CategoryImage;
 
 class CategoryController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * GET /api/products/categories
      */
     public function index()
     {
-        //
+        $categories = Category::with('image')
+            ->orderBy('parent_category')
+            ->orderBy('name')
+            ->get()
+            ->map(fn($cat) => [
+                'id'              => $cat->id,
+                'name'            => $cat->name,
+                'slug'            => $cat->slug,
+                'parent_category' => $cat->parent_category,
+                'image_url'       => $cat->image?->image_url,
+            ]);
+
+        return response()->json(['success' => true, 'data' => ['categories' => $categories]]);
     }
 
     /**
-     * Store a newly created resource in storage.
+     * GET /api/products/categories/images
      */
-    public function store(Request $request)
+    public function images()
     {
-        //
-    }
+        $images = CategoryImage::all()->keyBy('category_slug');
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        return response()->json(['success' => true, 'data' => ['images' => $images]]);
     }
 }

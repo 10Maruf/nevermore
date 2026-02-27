@@ -78,8 +78,10 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::put('/profile', [ProfileController::class, 'update']);
         Route::post('/change-password', [ProfileController::class, 'changePassword']);
         Route::post('/request-email-change', [ProfileController::class, 'requestEmailChange']);
-        Route::post('/verify-email-change', [ProfileController::class, 'verifyEmailChange']);
     });
+
+    // email-change verify is public (clicked from email link)
+    Route::get('/user/verify-email-change', [ProfileController::class, 'verifyEmailChange']);
 
     // Cart
     Route::prefix('cart')->group(function () {

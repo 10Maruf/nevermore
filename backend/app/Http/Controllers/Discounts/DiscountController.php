@@ -4,46 +4,89 @@ namespace App\Http\Controllers\Discounts;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class DiscountController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * GET /api/discounts?code=...  — validate a code (public)
+     * GET /api/discounts           — list all (admin, requires auth token)
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $code = $request->query('code');
+        if ($code) {
+            return $this->validateCode((string)$code, (float)$request->query('subtotal', 0));
+        }
+
+        // Admin-only list
+        $user = $request->user('sanctum');
+        if (!$user) {
+            return response()->json(['success' => false, 'message' => 'Unauthorized.'], 401);
+        }
+        if (!$user->isAdmin()) {
+            return response()->json(['success' => false, 'message' => 'Admin access required.'], 403);
+        }
+
+        $discounts = DB::table('discount_codes')->orderByDesc('created_at')->get();
+
+        return response()->json(['success' => true, 'data' => ['discounts' => $discounts]]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    /** POST /api/discounts/validate — Body: { code, subtotal? } */
+    public function validate(Request $request)
     {
-        //
+        $request->validate([
+            'code'     => 'required|string|max:50',
+            'subtotal' => 'sometimes|numeric|min:0',
+        ]);
+
+        return $this->validateCode($request->code, (float)$request->input('subtotal', 0));
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    private function validateCode(string $code, float $subtotal = 0)
     {
-        //
-    }
+        $discount = DB::table('discount_codes')
+            ->where('code', strtoupper(trim($code)))
+            ->where('status', 'active')
+            ->first();
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
+        if (!$discount) {
+            return response()->json(['success' => false, 'message' => 'Invalid discount code.'], 404);
+        }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        if ($discount->expiry_date && now()->toDateString() > $discount->expiry_date) {
+            return response()->json(['success' => false, 'message' => 'Discount code has expired.'], 400);
+        }
+
+        if ($discount->max_uses && $discount->current_uses >= $discount->max_uses) {
+            return response()->json(['success' => false, 'message' => 'Discount code has reached maximum uses.'], 400);
+        }
+
+        if ($subtotal > 0 && $discount->min_purchase && $subtotal < (float)$discount->min_purchase) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Minimum purchase of ' . $discount->min_purchase . ' required.',
+            ], 400);
+        }
+
+        $discountAmount = 0;
+        if ($subtotal > 0) {
+            $discountAmount = $discount->type === 'percentage'
+                ? round($subtotal * (float)$discount->value / 100, 2)
+                : min((float)$discount->value, $subtotal);
+        }
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Discount code is valid.',
+            'data'    => [
+                'code'            => $discount->code,
+                'type'            => $discount->type,
+                'value'           => $discount->value,
+                'discount_amount' => $discountAmount,
+                'min_purchase'    => $discount->min_purchase,
+            ],
+        ]);
     }
 }
