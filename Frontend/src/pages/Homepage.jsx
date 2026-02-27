@@ -214,7 +214,7 @@ export default function Homepage({ navigate }) {
             </div>
           </div>
 
-          <div className="logo"><h1>evermore</h1></div>
+          <div className="logo"><h1>nevermore</h1></div>
 
           <div className="homepage-nav-icons">
             <button className="homepage-icon-btn homepage-search-icon" aria-label="Search" onClick={() => goto('search')}>
@@ -382,7 +382,7 @@ export default function Homepage({ navigate }) {
           <div className="split-half custom-left">
             <div className="custom-overlay">
               <h2 className="custom-title">CUSTOMIZE YOUR APPARELS,<br /><span className="custom-emph">YOUR WAY.</span></h2>
-              <p className="custom-desc">Experience a personalized fashion journey with <b>evermore</b>, where you can create your unique, eye-catching t-shirts, tank-top, hoodies, shorts, jogger and many more in our online design studio.</p>
+              <p className="custom-desc">Experience a personalized fashion journey with <b>nevermore</b>, where you can create your unique, eye-catching t-shirts, tank-top, hoodies, shorts, jogger and many more in our online design studio.</p>
               <button className="custom-button" onClick={() => navigate('custom-design')}>TRY IT NOW</button>
             </div>
           </div>

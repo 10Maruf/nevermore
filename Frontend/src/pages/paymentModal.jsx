@@ -28,7 +28,7 @@ const PaymentModal = () => {
       <div className="modal-header">
         <button className="back-btn">←</button>
         <div className="logo-circle">
-          <span className="logo-text">evermore</span>
+          <span className="logo-text">nevermore</span>
         </div>
       </div>
 

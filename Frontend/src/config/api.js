@@ -9,7 +9,7 @@ const envBaseUrl = (typeof import.meta !== 'undefined' && import.meta.env && imp
 
 const defaultBaseUrl = (typeof window !== 'undefined')
   ? `${window.location.origin}/backend`
-  : 'https://evermorebrand.com/backend'
+  : 'https://nevermorebrand.com/backend'
 
 export const API_BASE_URL = envBaseUrl || defaultBaseUrl
 

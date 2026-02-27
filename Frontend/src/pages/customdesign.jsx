@@ -1384,7 +1384,7 @@ export default function CustomDesign({ navigate }) {
         images: designs.front.elements
           .filter(el => el.type === 'image' && el.assetUrl)
           .map(el => ({
-            url: `https://evermorebrand.com${el.assetUrl}`,
+            url: `https://nevermorebrand.com${el.assetUrl}`,
             filename: el.assetUrl.split('/').pop()
           })),
         texts: designs.front.elements.filter(el => el.type === 'text').map(el => ({
@@ -1398,7 +1398,7 @@ export default function CustomDesign({ navigate }) {
         images: designs.back.elements
           .filter(el => el.type === 'image' && el.assetUrl)
           .map(el => ({
-            url: `https://evermorebrand.com${el.assetUrl}`,
+            url: `https://nevermorebrand.com${el.assetUrl}`,
             filename: el.assetUrl.split('/').pop()
           })),
         texts: designs.back.elements.filter(el => el.type === 'text').map(el => ({
@@ -1412,7 +1412,7 @@ export default function CustomDesign({ navigate }) {
         images: designs.leftSleeve.elements
           .filter(el => el.type === 'image' && el.assetUrl)
           .map(el => ({
-            url: `https://evermorebrand.com${el.assetUrl}`,
+            url: `https://nevermorebrand.com${el.assetUrl}`,
             filename: el.assetUrl.split('/').pop()
           })),
         texts: designs.leftSleeve.elements.filter(el => el.type === 'text').map(el => ({
@@ -1426,7 +1426,7 @@ export default function CustomDesign({ navigate }) {
         images: designs.rightSleeve.elements
           .filter(el => el.type === 'image' && el.assetUrl)
           .map(el => ({
-            url: `https://evermorebrand.com${el.assetUrl}`,
+            url: `https://nevermorebrand.com${el.assetUrl}`,
             filename: el.assetUrl.split('/').pop()
           })),
         texts: designs.rightSleeve.elements.filter(el => el.type === 'text').map(el => ({
@@ -2954,3 +2954,4 @@ export default function CustomDesign({ navigate }) {
     </div>
   )
 }
+

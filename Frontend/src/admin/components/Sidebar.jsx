@@ -20,7 +20,7 @@ export default function Sidebar({ isOpen, sidebarRef }) {
   return (
     <aside ref={sidebarRef} className={`admin-sidebar ${isOpen ? 'mobile-open' : ''}`}>
       <div className="sidebar-header">
-        <h2>evermore Admin</h2>
+        <h2>nevermore Admin</h2>
       </div>
       <nav className="sidebar-nav">
         {menuItems.map((item) => (

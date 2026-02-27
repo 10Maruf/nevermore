@@ -1,4 +1,4 @@
-// Evermore Landing Page JavaScript
+// Nevermore Landing Page JavaScript
 
 document.addEventListener('DOMContentLoaded', function() {
     // Smooth scrolling for navigation links
@@ -123,6 +123,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    console.log('Evermore Landing Page loaded successfully!');
+    console.log('Nevermore Landing Page loaded successfully!');
 });
+
 

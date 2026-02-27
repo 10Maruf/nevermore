@@ -75,7 +75,7 @@ export default function GenerateReports() {
 
   const handleDownloadReport = (report) => {
     const reportContent = `
-EVERMORE ADMIN REPORT
+NEVERMORE ADMIN REPORT
 Generated: ${report.generatedDate}
 Period: ${report.startDate} to ${report.endDate}
 
@@ -106,7 +106,7 @@ End of Report
     `
     const element = document.createElement("a")
     element.setAttribute("href", "data:text/plain;charset=utf-8," + encodeURIComponent(reportContent))
-    element.setAttribute("download", `evermore-report-${report.startDate}-to-${report.endDate}.txt`)
+    element.setAttribute("download", `nevermore-report-${report.startDate}-to-${report.endDate}.txt`)
     element.style.display = "none"
     document.body.appendChild(element)
     element.click()
