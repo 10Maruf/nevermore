@@ -42,7 +42,7 @@ export default function MenNewArrival({ navigate }){
         // Transform products to match the expected format
         const transformedProducts = data.data.products.map(product => {
           // Get first variant's image if available
-          let imageUrl = '/assets/placeholders/product.png'
+          let imageUrl = '/assets/placeholders/no-image.svg'
           if (product.variants_summary && product.variants_summary.length > 0 && product.variants_summary[0].image) {
             imageUrl = resolveBackendUrl(product.variants_summary[0].image)
           }
@@ -161,3 +161,4 @@ export default function MenNewArrival({ navigate }){
     </div>
   )
 }
+

@@ -214,11 +214,11 @@ export default function ProductForm({ mode = 'add', productId = null, onSuccess,
             return {
               id: `existing-${idx}`,
               name: img.url ? img.url.split('/').pop() : `Image ${idx + 1}`,
-              url: fullUrl || '/assets/placeholders/no-image.png',
+              url: fullUrl || '/assets/placeholders/no-image.svg',
               serverUrl: img.url || ''
             }
           })
-          .filter(img => img.url && img.url !== '/assets/placeholders/no-image.png')
+          .filter(img => img.url && img.url !== '/assets/placeholders/no-image.svg')
       : []
 
     setFormData(prev => ({

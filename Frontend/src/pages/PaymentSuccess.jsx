@@ -306,7 +306,7 @@ export default function PaymentSuccess({ navigate }){
                     <td style={{padding: '12px', color: '#000'}}>{index + 1}</td>
                     <td style={{padding: '12px'}}>
                       <img 
-                        src={item.image || item.img || '/assets/placeholders/product.png'} 
+                        src={item.image || item.img || '/assets/placeholders/no-image.svg'} 
                         alt={item.name || item.title} 
                         style={{width: 60, height: 60, objectFit: 'cover', borderRadius: 4}}
                       />
@@ -334,3 +334,4 @@ export default function PaymentSuccess({ navigate }){
     </div>
   )
 }
+

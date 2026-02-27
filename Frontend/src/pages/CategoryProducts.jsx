@@ -128,7 +128,7 @@ export default function CategoryProducts({ navigate, categorySlug, pageTitle }) 
         id: `${product.id}-${Date.now()}`,
         productId: product.id,
         title: product.name,
-        img: product.primary_image ? resolveBackendUrl(product.primary_image) : '/assets/placeholders/no-image.png',
+        img: product.primary_image ? resolveBackendUrl(product.primary_image) : '/assets/placeholders/no-image.svg',
         price: parseFloat(product.price)
       }]
     }
@@ -193,14 +193,11 @@ export default function CategoryProducts({ navigate, categorySlug, pageTitle }) 
             return (
               <div key={product.id} className="product-card" onClick={() => navigate(`/product/${product.id}`)}>
                 <img 
-                  src={product.primary_image ? resolveBackendUrl(product.primary_image) : '/assets/placeholders/no-image.png'} 
+                  src={product.primary_image ? resolveBackendUrl(product.primary_image) : '/assets/placeholders/no-image.svg'} 
                   alt={product.name}
                   onError={(e) => { 
-                    console.log('Image failed to load:', e.target.src)
-                    e.target.src = '/assets/placeholders/no-image.png' 
-                  }}
-                  onLoad={(e) => {
-                    console.log('Image loaded successfully:', e.target.src)
+                    e.target.onerror = null
+                    e.target.onerror = null; e.target.src = '/assets/placeholders/no-image.svg' 
                   }}
                 />
                 {isLoggedIn && (
@@ -223,3 +220,4 @@ export default function CategoryProducts({ navigate, categorySlug, pageTitle }) 
     </div>
   )
 }
+

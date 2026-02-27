@@ -243,7 +243,7 @@ export default function SearchResults({ navigate }) {
         id: `${product.id}-${Date.now()}`,
         productId: product.id,
         title: product.name,
-        img: product.primary_image ? resolveBackendUrl(product.primary_image) : '/assets/placeholders/no-image.png',
+        img: product.primary_image ? resolveBackendUrl(product.primary_image) : '/assets/placeholders/no-image.svg',
         price: parseFloat(product.price)
       }]
     }
@@ -347,11 +347,11 @@ export default function SearchResults({ navigate }) {
                     }}
                   >
                     <img
-                      src={product.primary_image ? resolveBackendUrl(product.primary_image) : '/assets/placeholders/no-image.png'}
+                      src={product.primary_image ? resolveBackendUrl(product.primary_image) : '/assets/placeholders/no-image.svg'}
                       alt={product.name}
                       loading="lazy"
                       decoding="async"
-                      onError={(e) => { e.target.src = '/assets/placeholders/no-image.png' }}
+                      onError={(e) => { e.target.onerror = null; e.target.onerror = null; e.target.src = '/assets/placeholders/no-image.svg' }}
                     />
                     <div className="product-info">
                       {product.parent_category && product.category_name && (
@@ -422,11 +422,11 @@ export default function SearchResults({ navigate }) {
                 }}
               >
                 <img 
-                  src={product.primary_image ? resolveBackendUrl(product.primary_image) : '/assets/placeholders/no-image.png'} 
+                  src={product.primary_image ? resolveBackendUrl(product.primary_image) : '/assets/placeholders/no-image.svg'} 
                   alt={product.name}
                   loading="lazy"
                   decoding="async"
-                  onError={(e) => { e.target.src = '/assets/placeholders/no-image.png' }}
+                  onError={(e) => { e.target.onerror = null; e.target.onerror = null; e.target.src = '/assets/placeholders/no-image.svg' }}
                 />
                 <button 
                   className={`wishlist-btn ${isInWishlist(product.id) ? 'active' : ''}`} 
@@ -465,3 +465,4 @@ export default function SearchResults({ navigate }) {
     </div>
   )
 }
+

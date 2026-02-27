@@ -150,9 +150,9 @@ export default function Accessories({ navigate }) {
           getSortedProducts().map(product => (
             <div key={product.id} className="product-card" onClick={() => navigate(`/product/${product.id}`)}>
               <img 
-                src={product.primary_image ? resolveBackendUrl(product.primary_image) : '/assets/placeholders/no-image.png'} 
+                src={product.primary_image ? resolveBackendUrl(product.primary_image) : '/assets/placeholders/no-image.svg'} 
                 alt={product.name}
-                onError={(e) => { e.target.src = '/assets/placeholders/no-image.png' }}
+                onError={(e) => { e.target.onerror = null; e.target.onerror = null; e.target.src = '/assets/placeholders/no-image.svg' }}
               />
               <button
                 className={`wishlist-heart ${isInWishlist(product.id) ? 'active' : ''}`}
@@ -172,3 +172,4 @@ export default function Accessories({ navigate }) {
     </div>
   )
 }
+

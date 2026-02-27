@@ -90,7 +90,7 @@ export default function ProductView({ navigate, productId }) {
             // Store images grouped by color
             imagesByColor: imagesByColor,
             // Get images for first color as default
-            images: Object.values(imagesByColor)[0] || ['/assets/placeholders/no-image.png'],
+            images: Object.values(imagesByColor)[0] || ['/assets/placeholders/no-image.svg'],
             // Get unique colors from variants
             colors: apiProduct.variants && apiProduct.variants.length > 0
               ? apiProduct.variants
@@ -175,7 +175,7 @@ export default function ProductView({ navigate, productId }) {
       const selectedColorName = product.colors[colorIndex].name
       const colorImages = product.imagesByColor[selectedColorHex] || 
                           product.imagesByColor[selectedColorName] || 
-                          ['/assets/placeholders/no-image.png']
+                          ['/assets/placeholders/no-image.svg']
       
       // Update product images
       setProduct(prev => ({
@@ -457,14 +457,14 @@ export default function ProductView({ navigate, productId }) {
                     alt={`${product.title} view ${idx+1}`}
                     onError={(e) => {
                       console.log('Image failed to load:', img)
-                      e.target.src = '/assets/placeholders/no-image.png'
+                      e.target.onerror = null; e.target.onerror = null; e.target.src = '/assets/placeholders/no-image.svg'
                     }}
                   />
                 </div>
               ))
             ) : (
               <div className="product-image">
-                <img src="/assets/placeholders/no-image.png" alt="No image available" />
+                <img src="/assets/placeholders/no-image.svg" alt="No image available" />
               </div>
             )}
           </div>
@@ -719,3 +719,4 @@ export default function ProductView({ navigate, productId }) {
     </div>
   )
 }
+
