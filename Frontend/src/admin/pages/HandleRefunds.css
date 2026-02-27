@@ -1,0 +1,48 @@
+.refunds-table {
+  background: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table-scroll {
+  overflow-x: auto;
+  overflow-y: visible;
+}
+
+.refunds-table table {
+  width: 100%;
+  min-width: 900px;
+  border-collapse: collapse;
+}
+
+.refunds-table thead {
+  background-color: #f8f9fa;
+}
+
+.refunds-table th {
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+  color: #000;
+  border-bottom: 2px solid #ecf0f1;
+}
+
+.refunds-table td {
+  padding: 12px;
+  border-bottom: 1px solid #ecf0f1;
+  color: #000;
+}
+
+.refunds-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+}

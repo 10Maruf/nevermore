@@ -1,0 +1,88 @@
+/* Scoped Category CSS */
+.category-page * { box-sizing: border-box }
+.category-page { color:#111; font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, Arial }
+.category-page .container { max-width:1200px; margin:0 auto; padding:14px 20px 40px }
+.category-title { font-size:1.4rem; margin-bottom:32px; letter-spacing:2px; color:rgb(99,103,99) }
+.category-header h6 { font-size:1rem; border-left:4px solid #111; padding-left:10px; margin-bottom:20px; color:rgb(99,103,99) }
+.category-section { margin-bottom: 40px; }
+
+/* Horizontal scroll wrapper */
+.category-scroll-wrapper { 
+  position: relative; 
+  display: flex; 
+  align-items: center; 
+  gap: 10px;
+}
+
+/* Scroll buttons */
+.scroll-btn {
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.3s ease;
+  z-index: 10;
+}
+
+.scroll-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Horizontal scrollable row */
+.category-row {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 10px 0;
+  flex: 1;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0,0,0,0.3) transparent;
+}
+
+.category-row::-webkit-scrollbar {
+  height: 8px;
+}
+
+.category-row::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.category-row::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.3);
+  border-radius: 4px;
+}
+
+.category-row::-webkit-scrollbar-thumb:hover {
+  background: rgba(0,0,0,0.5);
+}
+
+.category-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap:15px; margin-bottom:30px }
+.category-card { 
+  background:whitesmoke; 
+  border-radius:12px; 
+  padding:16px 10px; 
+  min-width: 180px;
+  height:250px; 
+  display:flex; 
+  flex-direction:column; 
+  justify-content:space-between; 
+  color:rgb(99,103,99); 
+  transition:transform .18s ease;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.category-card img { width:100%; height:160px; object-fit:contain; border-radius:8px }
+.category-card p { margin-top:8px; font-weight:600; text-align: center; }
+.category-card:hover { transform:translateY(-6px); box-shadow:0 10px 20px rgba(0,0,0,0.06) }
+@media(min-width:900px){ .category-grid{ grid-template-columns: repeat(5,1fr) } }
+/* category.css neutralized (user requested deletion). */
+

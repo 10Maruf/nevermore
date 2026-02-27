@@ -1,0 +1,95 @@
+/* Import base profile styles */
+@import './profile.css';
+
+.password-form {
+  margin-top: 40px;
+}
+
+.password-grid {
+  display: flex;
+  justify-content: flex-start;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.password-input {
+  flex: 0 1 320px;
+  padding: 14px 18px;
+  background-color: #f5f5f5;
+  border: none;
+  font-size: 14px;
+  color: #000;
+  font-family: inherit;
+  border-radius: 4px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  max-width: 320px;
+}
+
+.password-input::placeholder {
+  color: #666;
+}
+
+.password-input:focus {
+  outline: none;
+  background-color: #fff;
+  box-shadow: 0 0 0 1.5px #000;
+}
+
+/* ===== BUTTONS ===== */
+.password-btns {
+  display: flex;
+  gap: 20px;
+}
+
+.btn-save {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 12px 35px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 4px;
+}
+
+.btn-save:hover {
+  background-color: #333;
+}
+
+.btn-cancel {
+  background-color: #fff;
+  color: #000;
+  border: 1.5px solid #000;
+  padding: 12px 35px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  transition: all 0.3s;
+  border-radius: 4px;
+}
+
+.btn-cancel:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media screen and (max-width: 768px) {
+  .password-grid {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .password-btns {
+    flex-direction: column;
+  }
+
+  .btn-save,
+  .btn-cancel {
+    width: 100%;
+    text-align: center;
+  }
+}

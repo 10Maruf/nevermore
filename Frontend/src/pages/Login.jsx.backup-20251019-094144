@@ -1,0 +1,115 @@
+import React from 'react'
+import { useLocation } from 'react-router-dom'
+import Navbar from '../components/Navbar'
+import './log.css'
+import './header.css'
+
+// Sample recommended products (first 5 from men's and women's)
+const RECOMMENDED_PRODUCTS = [
+  { id: 't1', img: "/assets/images/tee1.png", title: 'Coffee Gift Graphic T-Shirt', price: 'TK 780.00 BDT' },
+  { id: 't2', img: "/assets/images/tee2.png", title: 'Coffee Gift Print T-Shirt', price: 'TK 750.00 BDT' },
+  { id: 'wt1', img: "/assets/images/WOMEN'S/Women's TEES/wt1.png", title: "Women's Casual T-Shirt", price: 'TK 780.00 BDT' },
+  { id: 'wt2', img: "/assets/images/WOMEN'S/Women's TEES/wt2.png", title: "Women's Classic Tee", price: 'TK 750.00 BDT' },
+  { id: 'mh1', img: "/assets/images/MEN'S/Women's HOODIES/coffee_gift-removebg-preview.png", title: "Men's Coffee Gift Hoodie", price: 'TK 1280.00 BDT' },
+]
+
+export default function Login({ navigate }) {
+  const location = useLocation()
+  const handleLogin = (e) => {
+    e.preventDefault()
+    // Set logged in state in localStorage
+    localStorage.setItem('isLoggedIn', 'true')
+    // Redirect to intended page if any, else homepage
+    const from = location.state?.from?.pathname || 'home'
+    navigate(from)
+  }
+
+  return (
+    <div className="login-page-wrapper">
+      {/* Standard Header */}
+      <Navbar navigate={navigate} />
+      <div className="container">
+        <div className="form-box">
+          <h2>Login</h2>
+          <form onSubmit={handleLogin}>
+            <input type="email" placeholder="Email" required />
+            <input type="password" placeholder="Password" required />
+            <a href="#" className="link" onClick={(e)=>{e.preventDefault(); navigate('forgot')}}>Forgot your Password?</a>
+            <button type="submit">Sign In</button>
+          </form>
+          <p>Don't have an account? <a href="#" onClick={(e)=>{e.preventDefault(); navigate('signup')}}>Sign Up</a></p>
+        </div>
+      </div>
+
+      {/* Recommended Products Section */}
+      <section className="recommended-section">
+        <h2 className="recommended-title">RECOMMENDED</h2>
+        <div className="recommended-grid">
+          {RECOMMENDED_PRODUCTS.map(product => (
+            <div 
+              key={product.id} 
+              className="recommended-card" 
+              onClick={() => navigate(`product/${product.id}`)}
+            >
+              <img src={product.img} alt={product.title} />
+              <h3>{product.title}</h3>
+              <p>{product.price}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Footer (without logos) */}
+      <footer className="login-footer">
+        <div className="footer-columns">
+          <div className="col">
+            <h5>COMPANY</h5>
+            <ul>
+              <li>ABOUT</li>
+              <li>CAREERS</li>
+              <li>REVIEWS</li>
+              <li>SHIPPING</li>
+              <li>RETURNS</li>
+            </ul>
+          </div>
+          <div className="col">
+            <h5>CLIENT SERVICES</h5>
+            <ul>
+              <li>SUPPORT</li>
+              <li>TRACK ORDER</li>
+              <li>MAKE A RETURN</li>
+            </ul>
+          </div>
+          <div className="col">
+            <h5>SOCIAL</h5>
+            <ul>
+              <li>FACEBOOK</li>
+              <li>INSTAGRAM</li>
+              <li>TIKTOK</li>
+              <li>YOUTUBE</li>
+              <li>X</li>
+            </ul>
+          </div>
+          <div className="col">
+            <h5>COUNTRY</h5>
+            <ul>
+              <li>ITALY</li>
+              <li>FRANCE</li>
+              <li>UK</li>
+              <li>USA</li>
+              <li>CANADA</li>
+              <li>UAE</li>
+              <li>BANGLADESH</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="footer-smalllinks">
+          <a href="#">TERMS & CONDITIONS</a>
+          <a href="#">CONTACT US</a>
+          <a href="#">PRIVACY POLICY</a>
+        </div>
+      </footer>
+    </div>
+  )
+}

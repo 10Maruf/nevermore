@@ -1,0 +1,767 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #FFFFFF;
+    color: #000000;
+    overflow-x: hidden;
+    width: 1440px;
+    margin: 0 auto;
+}
+
+/* Header Styles */
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: transparent;
+    width: 1440px;
+    margin: 0 auto;
+}
+
+.nav {
+    position: relative;
+    width: 100%;
+    height: 80px;
+}
+
+/* Navigation Menu - Exact Figma positioning */
+.nav-menu {
+    position: absolute;
+    top: 41px;
+    left: 0;
+    display: flex;
+    gap: 0;
+}
+
+.nav-item {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.21;
+    transition: opacity 0.3s ease;
+    position: absolute;
+}
+
+.nav-item:nth-child(1) { /* Man */
+    left: 59px;
+    top: 0;
+    width: 34px;
+    height: 19px;
+}
+
+.nav-item:nth-child(2) { /* Woman */
+    left: 125px;
+    top: 0;
+    width: 59px;
+    height: 19px;
+}
+
+.nav-item:nth-child(3) { /* Accessories */
+    left: 223px;
+    top: 0;
+    width: 101px;
+    height: 39px;
+}
+
+.nav-item:nth-child(4) { /* Custom Design */
+    left: 352px;
+    top: 0;
+    width: 119px;
+    height: 39px;
+}
+
+.nav-item:hover {
+    opacity: 0.8;
+}
+
+/* Logo - Exact Figma positioning */
+.logo {
+    position: absolute;
+    left: 627px;
+    top: 4px;
+    width: 501px;
+    height: 34px;
+}
+
+.logo h1 {
+    font-family: 'GFS Didot', serif;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 1.249;
+    color: #FFFFFF;
+    text-align: center;
+    margin: 0;
+}
+
+/* Navigation Icons - Exact Figma positioning */
+.nav-icons {
+    position: absolute;
+    top: 40px;
+    right: 72px;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: opacity 0.3s ease;
+    position: absolute;
+}
+
+.heart-icon {
+    right: 161px;
+    width: 24px;
+    height: 24px;
+}
+
+.search-icon {
+    right: 207px;
+    width: 24px;
+    height: 24px;
+}
+
+.person-icon {
+    right: 120px;
+    width: 31px;
+    height: 30px;
+}
+
+.bag-icon {
+    right: 72px;
+    width: 24px;
+    height: 24px;
+}
+
+.icon-btn:hover {
+    opacity: 0.8;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    width: 1439px;
+    height: 1001px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Hero Text - Exact Figma positioning */
+.hero-title {
+    position: absolute;
+    left: 667px;
+    top: 640px;
+    width: 189px;
+    height: 28px;
+    font-family: 'Roboto Flex', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.172;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.hero-subtitle {
+    position: absolute;
+    left: 542px;
+    top: 686px;
+    width: 440px;
+    height: 47px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 48px;
+    line-height: 1.219;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+/* Hero Buttons - Exact Figma positioning */
+.hero-buttons {
+    position: absolute;
+    top: 775px;
+    left: 480px;
+}
+
+.cta-button {
+    position: absolute;
+    width: 240px;
+    height: 48px;
+    background: rgba(217, 217, 217, 0);
+    border: 1px solid #FFFFFF;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.cta-button.shop-now {
+    left: 0;
+}
+
+.cta-button.custom-design {
+    left: 265px;
+}
+
+.cta-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.cta-button span {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.333;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+/* New Arrivals Section */
+.new-arrivals {
+    position: relative;
+    width: 1440px;
+    margin: 0 auto;
+    background: #FFFFFF;
+}
+
+.arrivals-container {
+    position: relative;
+    left: -123px;
+    top: 1170px;
+    width: 1579px;
+    height: 814px;
+}
+
+.women-section {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 860px;
+    height: 814px;
+    overflow: hidden;
+}
+
+.men-section {
+    position: absolute;
+    left: 843px;
+    top: 0;
+    width: 736px;
+    height: 814px;
+    overflow: hidden;
+}
+
+.section-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Section Overlays - Exact Figma positioning */
+.women-section .section-overlay {
+    position: absolute;
+    left: 1056px;
+    top: 647px;
+    width: 411.34px;
+    height: 48px;
+}
+
+.men-section .section-overlay {
+    position: absolute;
+    left: 292px;
+    top: 647px;
+    width: 411.34px;
+    height: 48px;
+}
+
+.section-button {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    position: relative;
+}
+
+.section-button:hover {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.section-button span {
+    position: absolute;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.9375%;
+    color: #FFFFFF;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.women-section .section-button span {
+    width: 260px;
+    height: 23px;
+}
+
+.men-section .section-button span {
+    width: 163px;
+    height: 23px;
+}
+
+/* Accessories Section */
+.accessories {
+    position: relative;
+    width: 1440px;
+    margin: 0 auto;
+    background: #FFFFFF;
+}
+
+/* Accessory Images - Exact Figma positioning */
+.accessory-item:nth-child(1) {
+    position: absolute;
+    left: 656px;
+    top: 1036px;
+    width: 157px;
+    height: 99px;
+}
+
+.accessory-item:nth-child(2) {
+    position: absolute;
+    left: -15px;
+    top: 1984px;
+    width: 735px;
+    height: 1102px;
+}
+
+.accessory-item:nth-child(3) {
+    position: absolute;
+    left: 720px;
+    top: 1988px;
+    width: 719px;
+    height: 547px;
+}
+
+.accessory-item:nth-child(4) {
+    position: absolute;
+    left: 720px;
+    top: 2535px;
+    width: 794px;
+    height: 551px;
+}
+
+.accessory-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Accessory Categories - Exact Figma positioning */
+.accessory-categories {
+    position: relative;
+}
+
+.category-button {
+    position: absolute;
+    width: 374px;
+    height: 70px;
+    border: 2px solid #FFFFFF;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    text-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.tote-bags {
+    left: 195px;
+    top: 2365px;
+    background: rgba(217, 217, 217, 0);
+}
+
+.wallets {
+    left: 929px;
+    top: 2364px;
+    width: 384.85px;
+    background: rgba(0, 0, 0, 0);
+}
+
+.caps {
+    left: 929px;
+    top: 2776px;
+    width: 375px;
+    background: rgba(0, 0, 0, 0.08);
+}
+
+.category-button:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.category-button span {
+    position: absolute;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 1.273;
+    color: #FFFFFF;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.tote-bags span {
+    width: 304.6px;
+    height: 29px;
+}
+
+.wallets span {
+    width: 205.32px;
+    height: 29px;
+}
+
+.caps span {
+    width: 200.06px;
+    height: 29px;
+}
+
+/* Custom Design Section */
+.custom-design-section {
+    position: relative;
+    width: 1440px;
+    margin: 0 auto;
+    background: #FFFFFF;
+}
+
+/* Custom Design Content - Exact Figma positioning */
+.custom-title {
+    position: absolute;
+    left: 58px;
+    top: 3215px;
+    width: 597px;
+    height: 234px;
+    font-family: 'Roboto Flex', sans-serif;
+    font-weight: 500;
+    font-size: 64px;
+    line-height: 1.172;
+    letter-spacing: 8%;
+    color: #000000;
+    margin: 0;
+}
+
+.custom-description {
+    position: absolute;
+    left: 60px;
+    top: 3538px;
+    width: 645px;
+    height: 212px;
+    font-family: 'Roboto Flex', sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 1.172;
+    color: #000000;
+    margin: 0;
+}
+
+.custom-cta {
+    position: absolute;
+    left: 177px;
+    top: 3865px;
+    width: 360.35px;
+    height: 70px;
+    background: #000000;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.custom-cta:hover {
+    background: #333333;
+}
+
+.custom-cta span {
+    position: absolute;
+    left: 122px;
+    top: 21px;
+    width: 130px;
+    height: 28px;
+    font-family: 'Roboto Flex', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.172;
+    color: #FFFFFF;
+}
+
+/* Custom Design Image - Exact Figma positioning */
+.custom-image {
+    position: absolute;
+    left: 720px;
+    top: 3086px;
+    width: 720px;
+    height: 964px;
+    overflow: hidden;
+}
+
+.custom-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Footer */
+.footer {
+    position: relative;
+    width: 1440px;
+    margin: 0 auto;
+    background: #FFFFFF;
+}
+
+.footer-content {
+    position: absolute;
+    left: 63px;
+    top: 4128px;
+    width: 1341px;
+    height: 287px;
+}
+
+/* Footer Sections - Exact Figma positioning */
+.footer-section {
+    position: absolute;
+}
+
+.footer-section:nth-child(1) { /* COMPANY */
+    left: 280px;
+    top: 0;
+    width: 96px;
+    height: 234px;
+}
+
+.footer-section:nth-child(2) { /* CLIENT SERVICES */
+    left: 466px;
+    top: 0;
+    width: 148px;
+    height: 158px;
+}
+
+.footer-section:nth-child(3) { /* SOCIAL */
+    left: 731px;
+    top: 0;
+    width: 109px;
+    height: 224px;
+}
+
+.footer-section:nth-child(4) { /* COUNTRY */
+    left: 930px;
+    top: 0;
+    width: 186px;
+    height: 287px;
+}
+
+.footer-section h4 {
+    position: absolute;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 1.172;
+    letter-spacing: 8%;
+    color: #000000;
+    margin: 0;
+}
+
+.footer-section:nth-child(1) h4 { /* COMPANY */
+    left: 0;
+    top: 0;
+    width: 89px;
+    height: 14px;
+}
+
+.footer-section:nth-child(2) h4 { /* CLIENT SERVICES */
+    left: 0;
+    top: 0;
+    width: 148px;
+    height: 26px;
+}
+
+.footer-section:nth-child(3) h4 { /* SOCIAL */
+    left: 0;
+    top: 0;
+    width: 70px;
+    height: 26px;
+}
+
+.footer-section:nth-child(4) h4 { /* COUNTRY */
+    left: 0;
+    top: 0;
+    width: 89px;
+    height: 14px;
+}
+
+.footer-section ul {
+    position: absolute;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-section:nth-child(1) ul { /* COMPANY */
+    left: 0;
+    top: 56px;
+    width: 96px;
+    height: 178px;
+}
+
+.footer-section:nth-child(2) ul { /* CLIENT SERVICES */
+    left: 0;
+    top: 56px;
+    width: 148px;
+    height: 102px;
+}
+
+.footer-section:nth-child(3) ul { /* SOCIAL */
+    left: 0;
+    top: 56px;
+    width: 109px;
+    height: 168px;
+}
+
+.footer-section:nth-child(4) ul { /* COUNTRY */
+    left: 0;
+    top: 51px;
+    width: 186px;
+    height: 236px;
+}
+
+.footer-section li {
+    margin-bottom: 8px;
+}
+
+.footer-section a {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.172;
+    letter-spacing: 8%;
+    color: #000000;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.footer-section a:hover {
+    opacity: 0.7;
+}
+
+/* Footer Bottom - Exact Figma positioning */
+.footer-bottom {
+    position: absolute;
+    left: 472px;
+    top: 4442px;
+    width: 547px;
+    height: 25px;
+}
+
+.footer-links {
+    position: absolute;
+    display: flex;
+    gap: 52px;
+}
+
+.footer-links a {
+    position: absolute;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 1.172;
+    letter-spacing: 8%;
+    color: #000000;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.footer-links a:nth-child(1) { /* TERMS & CONDITIONS */
+    left: 0;
+    top: 0;
+    width: 181px;
+    height: 25px;
+}
+
+.footer-links a:nth-child(2) { /* CONTACT US */
+    left: 233px;
+    top: 0;
+    width: 117px;
+    height: 19px;
+}
+
+.footer-links a:nth-child(3) { /* PRIVACY POLICY */
+    left: 402px;
+    top: 0;
+    width: 145px;
+    height: 19px;
+}
+
+.footer-links a:hover {
+    opacity: 0.7;
+}
+
+/* Footer Images - Exact Figma positioning */
+.footer-images {
+    position: absolute;
+    left: 63px;
+    top: 4166px;
+    width: 1341px;
+    height: 180px;
+}
+
+.footer-img {
+    position: absolute;
+    width: 225px;
+    height: 142px;
+    object-fit: cover;
+}
+
+.footer-img:nth-child(1) {
+    left: 0;
+    top: 38px;
+}
+
+.footer-img:nth-child(2) {
+    left: 1116px;
+    top: 38px;
+}
+
+/* Page Container for Exact Figma Matching */
+.page-container {
+    width: 1440px;
+    margin: 0 auto;
+    position: relative;
+    background: #FFFFFF;
+}

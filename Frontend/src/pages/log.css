@@ -1,0 +1,258 @@
+
+.login-page-wrapper .container {
+  padding-top: 100px; 
+  display: flex;
+  align-items: flex-start; 
+  justify-content: center;
+  min-height: calc(100vh - 120px); 
+}
+
+.login-page-wrapper .form-box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 420px;
+}
+
+.login-page-wrapper h2 {
+  text-align: center;
+  margin-bottom: 20px; 
+  font-weight: 600;
+  font-size:30px;
+  color:rgb(99,103,99);
+}
+
+.login-page-wrapper .form-box {
+  position: relative;
+  z-index: 2; 
+}
+.login-page-wrapper .form-box > h2 {
+  color: rgb(99,103,99) !important;
+  display: block !important;
+  visibility: visible !important;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.login-page-wrapper form {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  gap: 16px;
+}
+
+.login-page-wrapper .form-box input[type="email"],
+.login-page-wrapper .form-box input[type="password"],
+.login-page-wrapper .form-box input[type="text"],
+.login-page-wrapper .form-box input[type="number"] {
+  border: none;                      
+  border-bottom: 2px solid #ccc;     
+  background: transparent;
+  padding: 8px 4px;           
+  font-size: 15px;
+  outline: none;                      
+  width: 500px;                     
+  transition: border-color 0.3s;
+}
+
+.login-page-wrapper .form-box input:focus {
+  border-bottom-color: #000;           
+}
+
+.login-page-wrapper .form-box button {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.login-page-wrapper .form-box button:hover {
+  background: #333;
+}
+
+.login-page-wrapper .link {
+  text-align: right;
+  font-size: 16px;
+  color: #666565;
+  text-decoration: none;
+}
+
+.login-page-wrapper p {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 16px;
+  color: #666;
+}
+
+.login-page-wrapper p a {
+  color:#666565;
+  text-decoration: none;
+}
+
+.login-page-wrapper .cancel-btn {
+  background: #ccc;
+  color: #000;
+}
+
+.login-page-wrapper .cancel-btn:hover {
+  background: #bbb;
+}
+
+.login-page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}
+
+
+.login-footer {
+  background: #000;
+  color: #fff;
+  padding: 15px 100px 15px;
+  margin-top: auto;
+}
+
+.login-footer .footer-columns {
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+  margin-bottom: 20px;
+}
+
+.login-footer .col h5 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.login-footer .col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.login-footer .col ul li {
+  font-size: 13px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  color: #fff;
+  transition: opacity 0.2s;
+}
+
+.login-footer .col ul li:hover {
+  opacity: 0.7;
+}
+
+.login-footer .footer-smalllinks {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding-top: 12px;
+  border-top: 1px solid white;
+}
+
+.login-footer .footer-smalllinks a {
+  color: #fff;
+  font-size: 12px;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.login-footer .footer-smalllinks a:hover {
+  opacity: 0.7;
+}
+
+/* Responsive */
+@media (max-width: 1280px) {
+  .login-page-wrapper .container {
+    padding-top: 80px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  /* Make form inputs responsive */
+  .login-page-wrapper .form-box input[type="email"],
+  .login-page-wrapper .form-box input[type="password"],
+  .login-page-wrapper .form-box input[type="text"],
+  .login-page-wrapper .form-box input[type="number"] {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .login-page-wrapper .form-box {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+  
+  .login-page-wrapper h2 {
+    font-size: 24px;
+  }
+  
+  .login-page-wrapper .form-box button[type="submit"] {
+    width: 100%;
+  }
+  
+  .recommended-section {
+    margin-top: 40px;
+    padding: 40px 20px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .recommended-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .recommended-section {
+    padding: 40px 30px;
+  }
+  
+  .recommended-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .login-footer {
+    padding: 40px 30px 20px;
+  }
+  
+  .login-footer .footer-columns {
+    flex-wrap: wrap;
+  }
+  
+  .login-footer .col {
+    flex: 1 1 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .recommended-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .login-footer .col {
+    flex: 1 1 100%;
+  }
+}
+
+/* Hide hamburger and icons on mobile for login/signup/forgot password pages */
+@media screen and (max-width: 1280px) {
+  .login-page-wrapper .mobile-menu-btn,
+  .login-page-wrapper .nav-icons-bar {
+    display: none !important;
+  }
+  
+  .login-page-wrapper .header-logo {
+    grid-column: 1 / -1 !important;
+    justify-self: center !important;
+  }
+}

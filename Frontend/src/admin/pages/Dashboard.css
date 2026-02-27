@@ -1,0 +1,118 @@
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page-container h1 {
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.stat-card {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid;
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+background-color: none;
+}
+
+.stat-card h3 {
+  font-size: 14px;
+  color: #7f8c8d;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+.dashboard-section {
+  background: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-section h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.table-scroll {
+  overflow-x: auto;
+  overflow-y: visible;
+}
+
+.activity-table {
+  width: 100%;
+  min-width: 700px;
+  border-collapse: collapse;
+}
+
+.activity-table thead {
+  background-color: #f8f9fa;
+}
+
+.activity-table th {
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+  color: #000;
+  border-bottom: 2px solid #ecf0f1;
+}
+
+.activity-table td {
+  padding: 12px;
+  border-bottom: 1px solid #ecf0f1;
+  color: #000;
+}
+
+.activity-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.badge.completed {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.badge.pending {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.badge.processing {
+  background-color: #cfe2ff;
+  color: #084298;
+}
+
+.badge.cancelled {
+  background-color: #f8d7da;
+  color: #842029;
+}

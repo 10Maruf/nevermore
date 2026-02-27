@@ -1,0 +1,29 @@
+/* Edit Profile Page Styles */
+.editprofile-container { max-width: 1200px; margin: 0 auto; padding: 30px 80px; }
+.editprofile-title { text-align:center; font-size:28px; font-weight:500; letter-spacing:2px; margin-bottom:40px; color: rgb(99,103,99) }
+
+.editprofile-section { margin-bottom: 40px; }
+.section-header { display:flex; align-items:center; justify-content:space-between; padding-bottom:12px; border-bottom:1px solid #000; margin-bottom:24px }
+.section-title { font-size:14px; font-weight:600; letter-spacing:1.5px; color:#000; margin:0; line-height:1 }
+
+.edit-grid { display:grid; grid-template-columns: repeat(2, 1fr); gap: 30px 120px }
+.edit-item { display:flex; flex-direction:column; gap:8px }
+.edit-label { font-size:13px; color:#666; font-weight:400 }
+.edit-input { padding:12px 14px; border:1px solid #ccc; border-radius:4px; font-size:14px; background:#fff; color:#000 }
+.edit-input:focus { outline:none; border-color:#000; background:#fff }
+
+.edit-actions { display:flex; gap:12px; margin-top: 16px }
+.btn-save { background:#000; color:#fff; border:none; padding:10px 22px; font-size:11px; letter-spacing:1.5px; cursor:pointer }
+.btn-cancel { background:#e0e0e0; color:#000; border:none; padding:10px 22px; font-size:11px; letter-spacing:1.2px; cursor:pointer }
+
+.profile-actions { display:flex; gap:12px; margin-top:24px }
+.profile-logout-row { display:flex; justify-content:center; margin-top:16px }
+.logout-btn { background:#e54545; color:#fff; border:none; padding:12px 35px; font-size:11px; font-weight:600; letter-spacing:1.5px; cursor:pointer; border-radius:4px; transition:none }
+.logout-btn:hover, .logout-btn:active, .logout-btn:focus { background:#e54545; filter:none; outline:none }
+
+@media (max-width: 768px){
+  .editprofile-container { padding: 30px 20px; }
+  .edit-grid { grid-template-columns: 1fr; gap: 20px }
+  .profile-actions { flex-direction:column }
+  .btn-save, .btn-cancel { width:100% }
+}

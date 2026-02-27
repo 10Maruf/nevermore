@@ -1,0 +1,204 @@
+[09-Jan-2026 20:08:28 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[10-Jan-2026 02:08:28 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/evermore/public_html/backend/api/designs/get_designs.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/evermore/public_html/backend/api/designs/get_designs.php on line 34
+[09-Jan-2026 20:11:11 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[10-Jan-2026 02:11:11 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/evermore/public_html/backend/api/designs/get_designs.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/evermore/public_html/backend/api/designs/get_designs.php on line 34
+[09-Jan-2026 20:44:50 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[10-Jan-2026 02:44:50 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/evermore/public_html/backend/api/designs/get_designs.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/evermore/public_html/backend/api/designs/get_designs.php on line 34
+[09-Jan-2026 20:45:24 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[10-Jan-2026 02:45:24 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/evermore/public_html/backend/api/designs/get_designs.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/evermore/public_html/backend/api/designs/get_designs.php on line 34
+[09-Jan-2026 20:46:02 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[10-Jan-2026 02:46:02 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/evermore/public_html/backend/api/designs/get_designs.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/evermore/public_html/backend/api/designs/get_designs.php on line 34
+[09-Jan-2026 20:51:03 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[09-Jan-2026 20:51:41 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[09-Jan-2026 20:52:01 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[09-Jan-2026 20:52:02 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[10-Jan-2026 02:52:02 Asia/Dhaka] No asset_ids to process or not an array
+[09-Jan-2026 20:52:02 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[09-Jan-2026 20:52:07 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[09-Jan-2026 20:52:09 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[09-Jan-2026 20:55:39 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[09-Jan-2026 21:04:07 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[09-Jan-2026 21:09:46 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[09-Jan-2026 21:09:51 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[09-Jan-2026 21:56:50 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[09-Jan-2026 21:57:18 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[09-Jan-2026 21:58:22 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[10-Jan-2026 03:03:22 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[10-Jan-2026 09:16:54 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[10-Jan-2026 12:09:32 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[10-Jan-2026 12:09:52 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[10-Jan-2026 12:10:16 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[10-Jan-2026 12:10:27 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[10-Jan-2026 12:11:12 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[10-Jan-2026 12:11:12 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[10-Jan-2026 12:11:13 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[10-Jan-2026 18:11:13 Asia/Dhaka] No asset_ids to process or not an array
+[10-Jan-2026 12:11:14 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[10-Jan-2026 12:11:17 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[10-Jan-2026 12:11:27 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[10-Jan-2026 12:11:34 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[10-Jan-2026 12:14:31 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[10-Jan-2026 12:14:34 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[10-Jan-2026 12:14:43 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[10-Jan-2026 12:41:39 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 08:16:48 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 08:17:37 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 08:19:22 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 08:20:23 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 08:22:39 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 08:22:48 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 14:22:48 Asia/Dhaka] No asset_ids to process or not an array
+[11-Jan-2026 08:22:52 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 08:42:45 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 09:51:47 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 09:55:22 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 09:56:26 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 09:57:35 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 10:01:57 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 10:02:48 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 10:03:07 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 10:04:08 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 10:04:09 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 10:04:13 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 10:04:14 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 16:04:14 Asia/Dhaka] No asset_ids to process or not an array
+[11-Jan-2026 10:04:15 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 10:04:25 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 10:04:49 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 10:04:54 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 10:05:14 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 10:05:35 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 10:05:50 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 10:06:06 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 10:06:27 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 10:06:44 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 10:06:44 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 10:06:44 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 10:09:12 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 10:09:16 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 10:18:58 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 11:07:40 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 11:08:14 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 11:08:45 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 11:09:06 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 19:58:00 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 19:58:01 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 19:58:14 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 19:58:48 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 19:59:47 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 20:00:33 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 20:01:20 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 20:01:54 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 20:01:55 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 20:01:57 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 20:01:59 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 20:02:02 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 02:02:02 Asia/Dhaka] No asset_ids to process or not an array
+[11-Jan-2026 20:02:02 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 20:02:05 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 20:02:26 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 20:02:48 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 20:03:01 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 20:03:04 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 02:03:04 Asia/Dhaka] No asset_ids to process or not an array
+[11-Jan-2026 20:03:04 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 20:03:09 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 20:03:13 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 20:03:28 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 20:03:33 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 20:03:55 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 20:03:58 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 20:04:20 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 02:04:20 Asia/Dhaka] No asset_ids to process or not an array
+[11-Jan-2026 20:04:24 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 20:04:31 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 20:04:33 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 20:10:41 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 20:12:25 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 20:13:06 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 20:13:06 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 20:13:07 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 02:13:07 Asia/Dhaka] No asset_ids to process or not an array
+[11-Jan-2026 20:13:08 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 20:13:25 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 20:13:50 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 20:14:09 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 02:14:09 Asia/Dhaka] No asset_ids to process or not an array
+[11-Jan-2026 20:14:09 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[11-Jan-2026 20:14:15 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 05:21:22 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 05:21:27 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 05:22:38 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 05:22:40 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 05:22:53 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 05:23:33 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 05:23:34 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 05:25:07 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 05:25:12 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 05:25:31 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 05:25:52 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 05:26:09 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 05:26:18 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 05:26:27 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 05:26:27 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 11:26:27 Asia/Dhaka] No asset_ids to process or not an array
+[12-Jan-2026 05:26:28 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 05:26:32 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 05:27:42 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 05:27:44 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 05:28:15 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 11:28:15 Asia/Dhaka] No asset_ids to process or not an array
+[12-Jan-2026 05:28:15 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 05:28:20 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 05:28:21 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 06:43:03 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 09:08:22 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 09:08:24 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 09:08:34 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 09:08:47 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 09:09:26 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 09:09:36 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 09:10:01 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 09:10:41 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 09:10:42 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 15:10:42 Asia/Dhaka] No asset_ids to process or not an array
+[12-Jan-2026 09:10:43 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 09:10:48 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 09:10:51 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 09:10:54 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 09:15:17 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 09:17:14 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 09:17:56 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 09:18:27 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 09:19:18 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 09:19:33 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 09:19:35 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 09:19:57 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 09:21:38 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 09:21:58 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 09:22:01 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 09:22:03 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 09:22:03 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 15:22:04 Asia/Dhaka] No asset_ids to process or not an array
+[12-Jan-2026 09:22:04 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 09:22:08 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 09:22:10 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 09:23:25 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 09:23:29 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 09:25:30 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56
+[12-Jan-2026 09:26:10 UTC] PHP Warning:  Undefined variable $isProduction in /home/evermore/public_html/backend/config/config.php on line 56

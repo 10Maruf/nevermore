@@ -1,0 +1,19 @@
+# Node
+/Frontend/node_modules/
+/Frontend/dist/
+
+# Secrets
+/backend/config/secrets.php
+/.env
+/.env.*
+
+# Laravel uploads (user content - not committed)
+/backend/uploads/
+/backend/storage/logs/
+/backend/storage/framework/cache/
+/backend/storage/framework/sessions/
+/backend/storage/framework/views/
+
+# OS/editor
+.DS_Store
+Thumbs.db

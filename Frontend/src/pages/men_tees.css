@@ -1,0 +1,85 @@
+.men-tees-page { font-family: 'Poppins', sans-serif; color: #000; background: #fff; }
+
+.men-tees-page .page-title { position:relative; display:flex; justify-content:center; align-items:center; padding:20px 100px; color:rgb(99,103,99) }
+.men-tees-page .page-title h1 { letter-spacing:2px; font-size: .7rem; margin:0 }
+.men-tees-page .refine-btn { position:absolute; left:100px; top:20px; border:1px solid #000; background:transparent; padding:5px 10px; cursor:pointer; color:#000; font-size:0.5rem; font-weight:bold; }
+.men-tees-page .refine-btn:hover { background:#312f2f; color:#fff }
+
+.men-tees-page .product-grid { display:grid; grid-template-columns: repeat(4, 1fr); gap:40px; padding:0 100px 80px }
+.men-tees-page .product-card { cursor: pointer; position: relative; }
+.men-tees-page .product-card img { width:100%; height: 400px; object-fit: cover; background:#f6f6f6; border-radius:4px; cursor: pointer; transition: transform 0.18s ease, box-shadow 0.18s ease; }
+.men-tees-page .product-card img:hover { transform: translateY(-6px) scale(1.04); box-shadow: 0 12px 30px rgba(0,0,0,0.12) }
+.men-tees-page .product-card h3 { font-size:0.95rem; margin:15px 0 5px; color:#222; font-weight:400; text-align: left; }
+.men-tees-page .product-card p { font-weight:600; font-size:0.9rem; text-align: left; }
+
+/* Wishlist heart icon */
+.men-tees-page .wishlist-heart {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(245, 245, 245, 0.9);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.2s ease;
+}
+
+.men-tees-page .wishlist-heart:hover {
+    background: none;
+  outline: none;   
+  box-shadow: none;
+}
+
+.men-tees-page .wishlist-heart svg {
+  color: #000;
+  transition: all 0.2s ease;
+}
+
+.men-tees-page .wishlist-heart.active svg {
+  fill: #ff0000;
+  stroke: #ff0000;
+  color: #ff0000;
+}
+
+@media(max-width:1200px){
+  .men-tees-page .product-grid{ grid-template-columns: repeat(3, 1fr); }
+}
+
+@media(max-width:768px){
+  .men-tees-page .page-title{ padding:20px 40px }
+  .men-tees-page .product-grid{ padding:0 40px; grid-template-columns: repeat(2, 1fr); }
+  .men-tees-page .refine-btn { left:40px; top:20px; }
+  .men-tees-page .product-card img { height: 300px; }
+}
+
+/* Ensure page can scroll when many products are present */
+.men-tees-page { min-height: 100%; overflow: auto }
+
+/* Filter popup */
+.men-tees-page .filter-popup { position:fixed; inset:0; background:rgba(0,0,0,0.2); display:flex; align-items:flex-start; justify-content:flex-start; padding:20px; z-index:1000 }
+.men-tees-page .filter-content { position:relative; background:#fff; color:#333; border-radius:10px; padding:20px 30px; box-shadow:0 5px 25px rgba(0,0,0,0.15); min-width:220px }
+.men-tees-page .filter-content h3 { margin-top:0; margin-bottom:15px }
+.men-tees-page .close-btn { position:absolute; top:15px; right:15px; cursor:pointer; font-size:28px; color:#666; font-weight:300; line-height:1; width:30px; height:30px; display:flex; align-items:center; justify-content:center; border-radius:50%; transition:all 0.2s }
+.men-tees-page .close-btn:hover { background:#f0f0f0; color:#000 }
+
+.men-tees-page .filter-list { list-style:none; padding:0; margin:8px 0; display:flex; flex-direction:column; gap:8px }
+.men-tees-page .filter-list li { padding:10px 12px; border-radius:6px; cursor:pointer; color:#222; background:transparent }
+.men-tees-page .filter-list li:hover { background:#f3f3f3 }
+
+html, body {
+  height: auto;
+  min-height: 100%;
+  overflow-y: auto;
+}
+
+.men-tees-page {
+  min-height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}

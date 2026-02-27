@@ -1,0 +1,14 @@
+# Allow access to uploaded files
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+    Header set Access-Control-Allow-Methods "GET, OPTIONS"
+    Header set Access-Control-Allow-Headers "Content-Type"
+</IfModule>
+
+# Enable image serving
+<FilesMatch "\.(jpg|jpeg|png|webp|gif)$">
+    Allow from all
+</FilesMatch>
+
+# Prevent directory listing
+Options -Indexes

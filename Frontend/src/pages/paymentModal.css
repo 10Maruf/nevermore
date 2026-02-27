@@ -1,0 +1,245 @@
+.modal {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 500px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background: white;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 3px solid #4a90e2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -30px;
+}
+
+.logo-text {
+  font-size: 18px;
+  font-weight: 600;
+  color: #4a90e2;
+  font-style: italic;
+}
+
+.header-icons {
+  display: flex;
+  gap: 8px;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 4px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 16px 16px;
+  text-align: center;
+  position: relative;
+  margin-top: 20px;
+}
+
+.modal-title h1 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  flex: 1;
+}
+
+.time {
+  font-size: 14px;
+  color: #999;
+  position: absolute;
+  right: 16px;
+}
+
+.nav-icons {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  padding: 16px;
+  background: white;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.nav-item .icon {
+  font-size: 24px;
+}
+
+.nav-item .label {
+  font-size: 12px;
+  color: #4a90e2;
+  font-weight: 500;
+}
+
+.tabs {
+  display: flex;
+  background: #4a90e2;
+  border: none;
+}
+
+.tab {
+  flex: 1;
+  padding: 16px;
+  background: #4a90e2;
+  color: white;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-bottom: 3px solid transparent;
+}
+
+.tab.active {
+  background: #4a90e2;
+  border-bottom: 3px solid white;
+}
+
+.tab:hover {
+  background: #3a7bc8;
+}
+
+.content {
+  flex: 1;
+  padding: 24px 16px;
+  background: white;
+  min-height: 300px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 8px;
+  background: #f9f9f9;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid #e0e0e0;
+}
+
+.card-item:hover {
+  background: #f0f0f0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card-logo {
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: white;
+  border-radius: 8px;
+}
+
+.card-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+}
+
+.empty-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  color: #999;
+  font-size: 16px;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px;
+  background: #e8e8e8;
+  border-top: 1px solid #d0d0d0;
+}
+
+.pay-icon {
+  font-size: 20px;
+}
+
+.pay-amount {
+  font-size: 16px;
+  font-weight: 600;
+  color: #666;
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .modal-title h1 {
+    font-size: 20px;
+  }
+
+  .nav-icons {
+    gap: 24px;
+  }
+}

@@ -1,0 +1,36 @@
+# Backend API .htaccess
+
+# Prevent directory browsing
+Options -Indexes
+
+# Enable error reporting for debugging (remove in production)
+# php_flag display_errors On
+
+# Set default charset
+AddDefaultCharset UTF-8
+
+# Allow .php files to be executed
+<FilesMatch "\.php$">
+    SetHandler application/x-httpd-php
+</FilesMatch>
+
+# Protect config files
+<FilesMatch "^(config\.php)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Enable CORS headers globally (backup if PHP headers fail)
+<IfModule mod_headers.c>
+    SetEnvIf Origin "^http(s)?://(.+\.)?(localhost:5173|localhost:5175|evermorebrand\.com)$" AccessControlAllowOrigin=$0
+    Header set Access-Control-Allow-Origin %{AccessControlAllowOrigin}e env=AccessControlAllowOrigin
+    Header set Access-Control-Allow-Credentials true
+    Header set Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+    Header set Access-Control-Allow-Headers "Content-Type, Authorization, X-Requested-With"
+</IfModule>
+
+# Set upload limits
+php_value upload_max_filesize 10M
+php_value post_max_size 10M
+php_value max_execution_time 300
+php_value max_input_time 300
